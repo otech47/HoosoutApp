@@ -55,13 +55,16 @@ setupTerminationHandlers();
 // (http://hoosoutapp.com/)
 // (http://hoosoutapp.com/api)
 
-app.get("/", function( req, res) {
+app.get("/", function(req, res) {
 	res.render('index.ejs');
 });
 
-app.get("/api", function( req, res) {
+app.get("/api", function(req, res) {
 	res.render('api.ejs');
 });
+
+app.get("/api/:route/:command", api);
+app.post("/api/:route/:command", api);
 
 // App starts listening here
 
