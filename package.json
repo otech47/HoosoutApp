@@ -1,0 +1,34 @@
+{
+  "name": "HoosoutApp",
+  "version": "1.0.0",
+  "author": "Hoosout App",
+  "description": "Hoosout API - A Node.js project",
+  "private": true,
+  "main": "server.js",
+  "licenses": [{
+    "type": "mit",
+    "url": "http://setmine.com"
+    }],
+  "repositories": {
+    "type": "private",
+    "url": "https://github.com/otech47/HoosoutApp"
+    },
+  "dependencies": {
+    "compression": "latest",
+    "ejs-locals": "latest",
+    "express": "4.x",
+    "express-admin": "~1.2.1",
+    "forever": "^0.11.1",
+    "mysql": "2.x",
+    "moment": "2.x",
+    "node-mysql": "~0.3.7",
+    "request": "2.x",
+    "searchjs": "~0.3.1",
+    "underscore": "~1.6.0",
+    "express-session": "1.x"
+  },
+  "scripts": {
+    "start": "forever stopall; forever start server.js",
+    "stop": "forever stopall"
+  }
+}
