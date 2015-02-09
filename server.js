@@ -41,7 +41,6 @@ terminator = function(sig){
 
 };
 setupTerminationHandlers = function(){
-    //  Process on exit and signals.
     process.on('exit', function() { terminator(); });
 
     ['SIGHUP', 'SIGINT', 'SIGQUIT', 'SIGILL', 'SIGTRAP', 'SIGABRT',
@@ -52,11 +51,21 @@ setupTerminationHandlers = function(){
 };
 setupTerminationHandlers();
 
+// Routes 
+// (http://hoosoutapp.com/)
+// (http://hoosoutapp.com/api)
+
+app.get("/", function( req, res) {
+	res.render('index.ejs');
+});
+
+app.get("/api", function( req, res) {
+	res.render('api.ejs');
+});
+
 // App starts listening here
 
 var startTime = new Date();
 console.log('\'Hoosout\' started at: ' + startTime);
 
-app.set( 'port', process.env.PORT || 8081);
-
-app.listen( app.get('port') );
+app.listen( 4000 );
