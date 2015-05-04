@@ -2,11 +2,12 @@
 
 Hours log
 
-5/3 - 6 hours
+5/3 - 7 hours
 	1. Users POST and DELETE routes finished.
 	2. Formatted API documentation
-	3. Added POST test form to API documentation
+	3. Added users POST test form to API documentation
 	4. Built events, establishment, and images database tables and set up JSON data models
+	5. Added users DELETE test form to API documentation
 
 4/30 - 1 hour
 	1. Added PUT and DELETE api routes.
