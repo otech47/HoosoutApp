@@ -1,6 +1,6 @@
 module.exports = {
 	db: {
-		host: 'stredmdb.cvmqdzp0bk4n.us-west-2.rds.amazonaws.com',
+		host: 'hoosout-database.c9n7ba1eqkjf.us-west-2.rds.amazonaws.com',
 		port: '3306',
 		database: 'main',
 		user: 'admin',

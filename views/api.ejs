@@ -4,5 +4,89 @@
   </head>
   <body>
     <h1 style="text-align:center;">HoosOut API Documentation</h1>
+    <p>
+    	hoosout.com/api/v1/users/id/100
+
+    	<h1>Routes</h1>
+            <h2>/users</h2>
+    			GET - Return documentation<br>
+    			PUT - Create a user with a formatted JSON object<br>
+                <form action="/api/users" method="POST">
+                    <div>
+                        <label>first_name</label><input type="text" name="first_name">
+                    </div>
+                    <div>
+                        <label>last_name</label><input type="text" name="last_name">
+                    </div>
+                    <div>
+                        <label>facebook_id</label><input type="text" name="facebook_id">
+                    </div>
+                    <div>
+                        <label>twitter</label><input type="text" name="twitter">
+                    </div>
+                    <div>
+                        <label>email</label><input type="text" name="email">
+                    </div>
+                    <div>
+                        <label>username</label><input type="text" name="username">
+                    </div>
+                    <div>
+                        <label>password</label><input type="text" name="password">
+                    </div>
+                    <input type="submit" />
+                </form>
+                DELETE - Deletes a user given the user ID<br>
+                <form action="/api/users" method="DELETE">
+                    <div>
+                        <label>id</label><input type="text" name="id">
+                    </div>
+                    <input type="submit" value="Delete">
+                </form>
+            <h2>/users/id/:id</h2>
+				GET - Return the user with the specified id<br>
+                POST - Edit a user's properties using the user ID with the properties to change in the body in JSON<br>
+            <h2>/events</h2>
+                GET - Return documentation<br>
+                PUT - Create an event with a formatted JSON object<br>
+        <h1>Models</h1>
+            <h2>users</h2>
+    			id<br>
+    			username<br>
+    			password<br>
+    			facebook_id<br>
+    			twitter<br>
+    			first_name<br>
+    			last_name<br>
+    			email<br>
+    			public/private<br>
+    			image_url (images)<br>
+    			users following<br>
+    			users followed<br>
+            <h2>events</h2>
+    			latitude (establishments)<br>
+    			longitude (establishments)<br>
+    			address (establishments)<br>
+    			datetime start<br>
+    			datetime end<br>
+    			image_url (images)<br>
+    			users attending (users)<br>
+    			users invited (users)<br>
+    			users present (users)<br>
+            <h2>establishments</h2>
+    			latitude<br>
+    			longitude<br>
+    			address<br>
+    			owner (users) - default unverified<br>
+    			name<br>
+    			image_url (images)<br>
+            <h2>images</h2>
+    			id<br>
+    			image_url<br>
+            <h2>messages</h2>
+    			receiving user/event<br>
+    			sending user<br>
+    			content - limit 200<br>
+    			timestamp<br>
+    </p>
   </body>
 </html>
