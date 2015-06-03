@@ -7,7 +7,7 @@
     <p>
     	<h1>Routes</h1>
             <h2>/users/all</h2>
-                GET - Returns all events<br>
+                GET - Returns all users<br>
             <h2>/users</h2>
     			POST - Create a user with a formatted JSON object<br>
                 <form action="/users" method="POST">
@@ -35,7 +35,7 @@
                     <input type="submit" />
                 </form>
             <h2>/users/id</h2>
-                DELETE - Deletes a user given the user ID as<br>
+                DELETE - Deletes a user given the user ID<br>
                 <form action="/users/id" method="DELETE">
                     <div>
                         <label>id</label><input type="text" name="id">
@@ -48,7 +48,41 @@
                 POST - Edit a user's properties using the user ID with the properties to change in the body in JSON<br>
             <h2>/events/all</h2>
                 GET - Returns all events<br>
-                PUT - Create an event with a formatted JSON object<br>
+            <h2>/events</h2>
+                POST - Create a event with a formatted JSON object<br>
+                <form action="/users" method="POST">
+                    <div>
+                        <label>establishment_id</label><input type="text" name="establishment_id">
+                    </div>
+                    <div>
+                        <label>datetime_start</label><input type="text" name="datetime_start">
+                    </div>
+                    <div>
+                        <label>datetime_end</label><input type="text" name="datetime_end">
+                    </div>
+                    <div>
+                        <label>image_id</label><input type="text" name="image_id">
+                    </div>
+                    <div>
+                        <label>event_name</label><input type="text" name="event_name">
+                    </div>
+                    <div>
+                        <label>facebook_url</label><input type="text" name="facebook_url">
+                    </div>
+                    <input type="submit" />
+                </form>
+            <h2>/events/id</h2>
+                DELETE - Deletes an event given the event ID<br>
+                <form action="/events/id" method="DELETE">
+                    <div>
+                        <label>id</label><input type="text" name="id">
+                    </div>
+                    <input type="submit" value="Delete">
+                </form>
+            <h2>/events/id/{id}</h2>
+                GET - Return the event with the specified id<br>
+            <h2>/users/{id}/{property}</h2>
+                POST - Edit an event's properties using the event ID and property, and the value to change in the body in JSON<br>
         <h1>Models</h1>
             <h2>users</h2>
     			id<br>
