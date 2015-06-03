@@ -2,6 +2,26 @@
 
 Hours log
 
+5/29 - 4 hours
+	1. Images POST, GET, and DELETE routes finished
+	2. Modified establishments SQL table
+	3. Built messages table
+	
+5/28 - 4 hours
+	1. Events POST, GET, and DELETE routes finished.
+	2. Events model CRUD functions finished
+	3. Establishments POST, GET, and DELETE routes finished.
+	4. Events model CRUD functions finished
+
+5/22 - 2 hours
+	1. Added database module.
+	2. Refactored models/controllers/routes
+	3. Set up models and api controllers for users, events, establishments, images, messages
+
+5/18 - 2 hours
+	1. Implemented Express router for code readabiity and organization
+	2. All routes initial set up (users, events, establishments, images, messages)
+
 5/3 - 7 hours
 	1. Users POST and DELETE routes finished.
 	2. Formatted API documentation
@@ -26,4 +46,4 @@ Hours log
 	7. Started building API Key authentication for API requests
 
 
-Total: 13
+Total: 22

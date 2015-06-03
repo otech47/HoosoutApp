@@ -17,9 +17,16 @@ var bodyParser = require('body-parser')
 // Custom Modules
 
 var settings = require('./config/settings')
-var api = require( './api/api' );
+var api = require( './controllers/api' );
 var connection = mysql.createPool(settings.db);
 
+// Route Modules
+
+var users = require('./router/routes/users.js')
+var events = require('./router/routes/events.js')
+var establishments = require('./router/routes/establishments.js')
+var images = require('./router/routes/images.js')
+var messages = require('./router/routes/messages.js')
 
 // Start Server Configuration
 
@@ -57,17 +64,23 @@ setupTerminationHandlers = function(){
 };
 setupTerminationHandlers();
 
+
 // Routes 
 // (http://hoosoutapp.com/)
-// (http://hoosoutapp.com/api)
+// (http://hoosoutapp.com/api) for API Documentation
 
-app.get("/", function(req, res) {
+router.get("/", function(req, res) {
 	res.render('index.ejs');
 });
 
-app.get("/api", function(req, res) {
+router.get("/api", function(req, res) {
 	res.render('api.ejs');
 });
+
+// Unsecured SQL Route for accessing the database
+// Recommendation:
+//    1. Use external client such as MySQL Workbench for SQL Work
+//    2. Delete this route
 
 app.get( '/submitSQL', function( req, res ){
   var query = req.query.sql;
@@ -81,14 +94,20 @@ app.get( '/submitSQL', function( req, res ){
   });
 });
 
-app.get("/api/:route/:key/:value",    api.run);
-app.post("/api/:route/:key/:value",   api.run);
-app.put("/api/:route",                api.run);
-app.delete("/api/:route",             api.run);
+// Main API routes
 
-// App starts listening here
+app.use("/", router)
+app.use("/users", users);
+app.use("/events", events);
+app.use("/establishments", establishments);
+app.use("/images", images);
+app.use("/messages", messages);
+
+// Server initalization logging
 
 var startTime = new Date();
 console.log('\'Hoosout\' started at: ' + startTime);
+
+// App starts listening here
 
 app.listen( 4000 );

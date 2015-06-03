@@ -5,13 +5,12 @@
   <body>
     <h1 style="text-align:center;">HoosOut API Documentation</h1>
     <p>
-    	hoosout.com/api/v1/users/id/100
-
     	<h1>Routes</h1>
+            <h2>/users/all</h2>
+                GET - Returns all events<br>
             <h2>/users</h2>
-    			GET - Return documentation<br>
-    			PUT - Create a user with a formatted JSON object<br>
-                <form action="/api/users" method="POST">
+    			POST - Create a user with a formatted JSON object<br>
+                <form action="/users" method="POST">
                     <div>
                         <label>first_name</label><input type="text" name="first_name">
                     </div>
@@ -35,18 +34,20 @@
                     </div>
                     <input type="submit" />
                 </form>
-                DELETE - Deletes a user given the user ID<br>
-                <form action="/api/users" method="DELETE">
+            <h2>/users/id</h2>
+                DELETE - Deletes a user given the user ID as<br>
+                <form action="/users/id" method="DELETE">
                     <div>
                         <label>id</label><input type="text" name="id">
                     </div>
                     <input type="submit" value="Delete">
                 </form>
-            <h2>/users/id/:id</h2>
+            <h2>/users/id/{id}</h2>
 				GET - Return the user with the specified id<br>
+            <h2>/users/{id}/{property}/{value}</h2>
                 POST - Edit a user's properties using the user ID with the properties to change in the body in JSON<br>
-            <h2>/events</h2>
-                GET - Return documentation<br>
+            <h2>/events/all</h2>
+                GET - Returns all events<br>
                 PUT - Create an event with a formatted JSON object<br>
         <h1>Models</h1>
             <h2>users</h2>
